@@ -4,8 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andrés & Tamara</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+
+        @font-face {
+            font-family: TAN Pearl;
+            src: url('public/fonts/tan-pearl.otf');
+        }
+
+        @font-face {
+            font-family: Aniyah;
+            src: url('public/fonts/aniyah.ttf');
+        }
+
+        @font-face {
+            font-family: IM Fell English SC;
+            src: url('public/fonts/IMFellEnglishSC-Regular.ttf');
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -23,16 +38,30 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh;
-            background-image: url('public/flores.jpeg');
+            height: 100lvh;
+            background-image: url('public/fondo_canson.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             z-index: -1;
+            opacity: 1;
+        }
+
+        .fixed-bg-two {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100lvh;
+            background-image: url('public/fond_canson_iglesia.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -2;
         }
 
         section {
-            min-height: 100vh;
+            min-height: 100lvh;
             padding: 80px 20px;
             display: flex;
             flex-direction: column;
@@ -45,12 +74,11 @@
             background-color: transparent;
             color: white;
             text-align: center;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .content-section {
-            background-color: white;
-            margin-top: 100vh;
+            background-color: rgba(255,255,255,0.7);
+            margin-top: 100lvh;
             box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
         }
 
@@ -67,14 +95,17 @@
             opacity: 0;
             transform: translateY(30px);
             animation: fadeUp 1s ease forwards;
+            font-family: "Aniyah", serif;
+            color: #ac795b;
         }
 
         h2 {
             font-size: 2.5rem;
             margin-bottom: 30px;
-            color: #2c3e50;
             position: relative;
             display: inline-block;
+            font-family: "Aniyah", serif;
+            color: #ac795b;
         }
 
         p {
@@ -82,31 +113,32 @@
             line-height: 1.8;
             margin-bottom: 25px;
             color: #555;
+            font-family: "IM Fell English SC",serif;
         }
 
         .home-p {
-            color: #dddddd;
+            color: #000000;
         }
 
         img {
-            max-width: 300px;
+            max-width: 600px;
         }
 
         .btn {
             display: inline-block;
             padding: 15px 40px;
-            background: #dfc197;
+            background: #ac795b;
             color: white;
-            text-decoration: none;
             border-radius: 50px;
-            font-weight: bold;
-            text-transform: uppercase;
             letter-spacing: 1px;
             margin-top: 20px;
+
             transition: all 0.3s ease;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeUp 1s ease 0.5s forwards;
+            border: 0;
+            font-family: "Glacial Indifference Regular",serif;
         }
 
         .btn:hover {
@@ -115,37 +147,13 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .photos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
         .photo-card {
-            background: #f8f9fa;
             padding: 40px 30px;
-            border-radius: 10px;
-            text-align: center;
             transition: transform 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        .photo-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .photo-card i {
-            font-size: 3rem;
-            color: #3498db;
-            margin-bottom: 20px;
-        }
-
-        .photo-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #2c3e50;
+        .small-photo {
+            max-height: 200px;
         }
 
         .scroll-indicator {
@@ -205,10 +213,6 @@
             .container {
                 padding: 20px;
             }
-            
-            .photos {
-                grid-template-columns: 1fr;
-            }
         }
 
         @media (max-width: 480px) {
@@ -224,9 +228,13 @@
 </head>
 <body>
     <div class="fixed-bg"></div>
+    <div class="fixed-bg-two"></div>
     
     <section class="home">
         <div class="container">
+            <div>
+                <img src="public/iglesia_acuarelav3_sin_fondo.png" alt="Foto iglesia acuarela">
+            </div>
             <h1>Andrés & Tamara</h1>
             <p class="home-p">Amor es una palabra hasta que alguien llega para darle sentido.</p>
         </div>
@@ -239,17 +247,10 @@
     <section id="content" class="content-section">
         <div class="container">
             <h2>Rubén Andrés & Tamara Pamela</h2>
-            <p>Con la bendición de Dios y de nuestros padres tenemos.</p>
-            <p>Tenemos el honor de invitarlos a nuestro matrimonio.</p>
-            
-            <div class="photos">
-                <div class="photo-card">
-                   <img src="public/T&A0119.jpg" alt="T&A">
-                </div>
-                
-                <div class="photo-card">
-                    <img src="public/T&A0008.jpg" alt="T&A">
-                </div>
+            <p>Con la bendición de Dios tenemos el honor de invitarlos a nuestro matrimonio.</p>
+
+            <div class="photo-card">
+               <img src="public/T&A0119.jpg" alt="T&A">
             </div>
 
             <p>3 de enero de 2026</p>
@@ -258,24 +259,25 @@
         </div>
     </section>
     
-    <section class="content-section" style="background-color: #f8f9fa;">
+    <section class="content-section">
         <div class="container">
             <h2>Ceremonia Religiosa</h2>
             <p>Inglesia de la Alborada</p>
-            
-            <div class="photos">
-                <div class="photo-card">
-                    <img src="public/DSC_6744_02.jpg">
-                </div>
-            </div>
 
+            <div class="photo-card">
+                <img class="small-photo" src="public/iglesia_miniatura.png" alt="Iglesia miniatura">
+            </div>
+            <button class="btn">Ver ubicación</button>
+        </div>
+
+        <div class="container">
             <h2>Recepción</h2>
             <p>Iguanazú, Urdesa</p>
-            <div class="photos">
-                <div class="photo-card">
-                    <img src="public/T&A0007.jpg">
-                </div>
+
+            <div class="photo-card">
+                <img class="small-photo" src="public/T&A0007.jpg" alt="Small photo">
             </div>
+            <button class="btn">Ver ubicación</button>
         </div>
     </section>
     
@@ -316,6 +318,21 @@
         document.querySelectorAll('.content-section').forEach(section => {
             observer.observe(section);
         });
+
+        const firstBg = document.getElementsByClassName("fixed-bg")[0];
+        function checkScroll() {
+            const scrollPosition = window.scrollY;
+            const viewportHeight = window.innerHeight;
+            firstBg.style.opacity = `${1 - scrollPosition / viewportHeight}`;
+        }
+
+        let isScrolling;
+        window.addEventListener('scroll', function() {
+            window.clearTimeout(isScrolling);
+            isScrolling = setTimeout(checkScroll, 5);
+        }, false);
+
+        checkScroll();
     </script>
 </body>
 </html>
