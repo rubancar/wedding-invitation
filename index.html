@@ -21,11 +21,18 @@
             src: url('public/fonts/IMFellEnglishSC-Regular.ttf');
         }
 
+        :root {
+            --rosybrown: rgba(195, 157, 156, 0.28);
+            --darkolivegreen: #8c8b5e;
+            --dimgray: rgb(79, 84, 59);
+            --rosybrown_dark: #a27057;
+            --saddlebrown: rgba(103, 57, 29, 0.78);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
@@ -96,38 +103,33 @@
             transform: translateY(30px);
             animation: fadeUp 1s ease forwards;
             font-family: "Aniyah", serif;
-            color: #ac795b;
+            color: var(--darkolivegreen);
         }
 
         h2 {
             font-size: 2.5rem;
-            margin-bottom: 30px;
+            margin: 20px;
             position: relative;
             display: inline-block;
             font-family: "Aniyah", serif;
-            color: #ac795b;
+            color:  var(--darkolivegreen);
         }
 
         p {
-            font-size: 1.2rem;
-            line-height: 1.8;
+            font-size: 1.5rem;
             margin-bottom: 25px;
-            color: #555;
+            color: var(--dimgray);
             font-family: "IM Fell English SC",serif;
         }
 
-        .home-p {
-            color: #000000;
-        }
-
         img {
-            max-width: 600px;
+            max-width: 500px;
         }
 
         .btn {
             display: inline-block;
             padding: 15px 40px;
-            background: #ac795b;
+            background: var(--saddlebrown);
             color: white;
             border-radius: 50px;
             letter-spacing: 1px;
@@ -138,18 +140,19 @@
             transform: translateY(30px);
             animation: fadeUp 1s ease 0.5s forwards;
             border: 0;
-            font-family: "Glacial Indifference Regular",serif;
-        }
-
-        .btn:hover {
-            background: #8d7960;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            font-family: "IM Fell English SC",serif;
+            font-size: 1.2rem;
         }
 
         .photo-card {
             padding: 40px 30px;
             transition: transform 0.3s ease;
+            background-color: var(--rosybrown);
+        }
+
+        .photo-card.silhouette {
+            background-color: transparent;
+            padding: 10px;
         }
 
         .small-photo {
@@ -164,13 +167,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: white;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            color: var(--dimgray);
             opacity: 0;
             animation: fadeIn 1s ease 1s forwards;
         }
 
-        .scroll-indicator i {
+        .scroll-indicator svg {
             font-size: 2rem;
             animation: bounce 2s infinite;
         }
@@ -207,21 +209,39 @@
             }
             
             h2 {
-                font-size: 2rem;
+                font-size: 1rem;
             }
             
             .container {
                 padding: 20px;
             }
+
+            img {
+                max-width: 400px;
+            }
         }
 
         @media (max-width: 480px) {
             h1 {
-                font-size: 2rem;
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 0.95rem;
+                display: block;
+                margin: 2px;
             }
             
             .btn {
                 padding: 12px 30px;
+            }
+
+            img {
+                max-width: 250px;
+            }
+
+            .fixed-bg-two {
+                background-image: url('public/fondo_iglesia_vertical.jpg');
             }
         }
     </style>
@@ -236,17 +256,18 @@
                 <img src="public/iglesia_acuarelav3_sin_fondo.png" alt="Foto iglesia acuarela">
             </div>
             <h1>Andrés & Tamara</h1>
-            <p class="home-p">Amor es una palabra hasta que alguien llega para darle sentido.</p>
+            <p>Amor es una palabra hasta que alguien llega para darle sentido.</p>
         </div>
         <div class="scroll-indicator">
-            <span>Scroll Down</span>
-            <i class="fas fa-chevron-down"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+            </svg>
         </div>
     </section>
     
     <section id="content" class="content-section">
         <div class="container">
-            <h2>Rubén Andrés & Tamara Pamela</h2>
+            <h2>Rubén Andrés</h2><h2>&</h2><h2> Tamara Pamela</h2>
             <p>Con la bendición de Dios tenemos el honor de invitarlos a nuestro matrimonio.</p>
 
             <div class="photo-card">
@@ -264,8 +285,8 @@
             <h2>Ceremonia Religiosa</h2>
             <p>Inglesia de la Alborada</p>
 
-            <div class="photo-card">
-                <img class="small-photo" src="public/iglesia_miniatura.png" alt="Iglesia miniatura">
+            <div class="photo-card silhouette">
+                <img class="small-photo" src="public/iglesia_silueta.png" alt="Iglesia miniatura">
             </div>
             <button class="btn">Ver ubicación</button>
         </div>
@@ -274,8 +295,8 @@
             <h2>Recepción</h2>
             <p>Iguanazú, Urdesa</p>
 
-            <div class="photo-card">
-                <img class="small-photo" src="public/T&A0007.jpg" alt="Small photo">
+            <div class="photo-card silhouette">
+                <img class="small-photo" src="public/fiesta_silueta.png" alt="Small photo">
             </div>
             <button class="btn">Ver ubicación</button>
         </div>
@@ -287,8 +308,9 @@
             <p>El mejor regalo es que estes presente en este día tan especial, pero si deseas hacernos un obsequio aquí tienes nuestros datos bancarios.</p>
 
             <h2>Confirma tu asistencia</h2>
-            <p>Es muy importante para nostros</p>
-            <p>Admisión, 2 personas.</p>
+            <p>Es muy importante para nosotros</p>
+            <p>Familia Carvajal Aguilar</p>
+            <p>Admisión, 4 personas</p>
             <button class="btn">Confirmar</button>
         </div>
     </section>
