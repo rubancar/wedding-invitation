@@ -20,8 +20,13 @@
           position: absolute;
           opacity: 0;
           -webkit-transition: opacity 0.6s ease-out;
-          transition: opacity 0.8s ease-out;
+          transition: opacity 0.6s ease-out;
           overflow: hidden;
+          text-align: center;
+          height: 100%;
+          width: auto;
+          max-width: 100%;
+          object-fit: contain;
       }
       .slide-item img {
           height: 100%;
@@ -63,6 +68,7 @@
           align-items: center;
       }
 
+
   </style>
 </head>
 <body>
@@ -72,39 +78,39 @@
     <input class="slide-open" type="radio" id="slide-1"
            name="slide" aria-hidden="true" hidden="" checked="checked">
     <div class="slide-item">
-      <img src="public/T&A0065.jpg">
+      <img src="public/T&A0065.jpg" alt="photo1">
     </div>
 
     <input class="slide-open" type="radio" id="slide-2"
            name="slide" aria-hidden="true" hidden="">
     <div class="slide-item">
-      <img src="public/IMG_20240821_191400856.jpg">
+      <img src="public/DSC_6154.jpg" alt="photo2">
     </div>
 
     <input class="slide-open" type="radio" id="slide-3"
            name="slide" aria-hidden="true" hidden="">
     <div class="slide-item">
-      <img src="public/T&A0007.jpg">
+      <img src="public/T&A0007.jpg" alt="photo3">
     </div>
 
     <label for="slide-3" class="slide-control prev control-1">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-chevron-left" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
       </svg>
     </label>
     <label for="slide-2" class="slide-control next control-1">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-chevron-right" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
       </svg>
     </label>
 
     <label for="slide-1" class="slide-control prev control-2">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-chevron-left" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
       </svg>
     </label>
     <label for="slide-3" class="slide-control next control-2">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-chevron-right" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
       </svg>
     </label>
