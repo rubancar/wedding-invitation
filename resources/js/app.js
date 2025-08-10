@@ -1,4 +1,5 @@
 import '../css/main.css'
+import wedding_bells_mp3 from '../music/wedding_bells.mp3?url'
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -127,3 +128,42 @@ function openMaps(event) {
   }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+let interactionDone = false;
+let value = false;
+let interaction = {};
+const interactionTrigger = () => interaction.interactionDone = true;
+Object.defineProperty(interaction, 'interactionDone', {
+  get() {
+    return value;
+  },
+  set(newValue) {
+    value = newValue;
+    console.log(`interactionDone updated to: ${value}`);
+    if(value) {
+      playBackgroundMusic();
+      document.removeEventListener('click', interactionTrigger);
+      document.removeEventListener('touchend', interactionTrigger);
+    }
+  }
+});
+interaction.interactionDone = value;
+
+function playBackgroundMusic() {
+  // Create audio element
+  const audio = new Audio(wedding_bells_mp3);
+
+  audio.loop = true;
+  audio.volume = 1; // Set volume to 50% (adjust as needed)
+
+  audio.play().catch(e => {
+    console.error('Audio playback failed:', e);
+  });
+}
+
+// Call the function when the script loads
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('click', interactionTrigger);
+  document.addEventListener('touchend', interactionTrigger);
+});
