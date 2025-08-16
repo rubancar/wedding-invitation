@@ -153,3 +153,51 @@ function pauseBackgroundMusic() {
 
 playButton.addEventListener('click', playBackgroundMusic);
 playButton.innerHTML = play_svg;
+
+
+///////////////////////////////// COUNTDOWN FUNCTIONALITY ///////////////////////////////////////
+function startCountdown(targetDate) {
+  // Get all the countdown elements
+  const daysElement = document.getElementById('countdown-days');
+  const hoursElement = document.getElementById('countdown-hours');
+  const minutesElement = document.getElementById('countdown-minutes');
+
+  function updateCountdown() {
+    // Get current date and time
+    const now = new Date();
+    // Calculate the difference between target and now
+    const diff = targetDate - now;
+
+    // If countdown is finished
+    if (diff <= 0) {
+      daysElement.textContent = '0';
+      hoursElement.textContent = '0';
+      minutesElement.textContent = '0';
+      clearInterval(countdownInterval);
+      return;
+    }
+
+    // Calculate days, hours, minutes
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+    // Update the DOM elements
+    daysElement.textContent = days.toString();
+    hoursElement.textContent = hours.toString().padStart(2, '0');
+    minutesElement.textContent = minutes.toString().padStart(2, '0');
+  }
+
+  // Initial update
+  updateCountdown();
+
+  // Update every minute (60000 milliseconds)
+  const countdownInterval = setInterval(updateCountdown, 60000);
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // 0 = January
+  const targetDate = new Date(2026, 0, 3, 12, 0); // December 31, 2024 at 23:59
+  startCountdown(targetDate);
+});
