@@ -8,14 +8,25 @@
 </head>
 <body>
 <div class="fixed-bg"></div>
-<div class="fixed-bg-two"></div>
+<!--<div class="fixed-bg-two"></div>-->
 <div class="play-music" id="play-button">
   <!-- Play/Pause SVG will be rendered dynamically by JS -->
 </div>
 
 <section class="home">
   <div class="container">
-    <p class="intro-main">con la bendición de Dios, te invitamos a nuestra boda</p>
+    <p class="intro-main">con la bendición de Dios y de nuestros padres</p>
+    <div class="parents-names">
+      <div>
+        <p>Edgar Rubén Carvajal González</p>
+        <p>Pedro Francisco García López</p>
+      </div>
+      <div>
+        <p>Gloria Yolanda Ulloa Procel</p>
+        <p>Gina Elizabeth Soria Campuzano</p>
+      </div>
+
+    </div>
     <div class="intro-main-names">
       <p class="main-name">andrés</p><p class="main-and">and</p><p class="main-name">tamara</p>
     </div>
@@ -26,15 +37,17 @@
     <h1>Andrés & Tamara</h1>
 
     <p>amor es una palabra hasta que alguien llega para darle sentido.</p>-->
-    <div class="info-date-main">
-      <p class="wedding-date-p">enero 3</p>
-      <p class="wedding-date-p">guayaquil 2026</p>
-    </div>
     <div class="church-main">
+      <p>tenemos el honor de invitarte a la nuestra boda eclesiástica</p>
       <p>Santuario Nuestra Señora de la</p><p>Alborada</p>
       <img class="church-main-img"
            src="{{ asset('resources/images/iglesia_interior_fondo_transparente.png') }}"
            alt="Altar iglesia">
+    </div>
+
+    <div class="info-date-main">
+      <p class="wedding-date-p">03.01.2026</p>
+      <p class="wedding-date-p">a las 11:30 am</p>
     </div>
 
   </div>
@@ -50,16 +63,20 @@
   <div class="container">
 
     <!--<p>con la bendición de dios tenemos el honor de invitarlos a nuestro matrimonio.</p>-->
-    <p class="margin-top">siete años de relación nos han hecho entender que amor es solo una palabra hasta que alguien llega para darle sentido.</p>
+    <div class="slide-text">
+      <p id="slide-1-text">siete años de relación nos han hecho entender que... </p>
+      <p id="slide-2-text">amor es solo una palabra hasta que alguien llega para darle sentido...</p>
+      <p id="slide-3-text">lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
 
     <div class="slide">
       <div class="slide-inner">
 
-        <input class="slide-open" type="radio" id="slide-1"
-               name="slide" aria-hidden="true" hidden="" checked="checked">
-        <div class="slide-item">
-          <img src="{{ asset('resources/images/T&A0065.jpg') }}" alt="photo1">
-        </div>
+          <input class="slide-open" type="radio" id="slide-1"
+                 name="slide" aria-hidden="true" hidden="" checked="checked">
+          <div class="slide-item">
+            <img src="{{ asset('resources/images/T&A0065.jpg') }}" alt="photo1">
+          </div>
 
         <input class="slide-open" type="radio" id="slide-2"
                name="slide" aria-hidden="true" hidden="">
@@ -156,7 +173,7 @@
     <p>iguanazú</p>
 
     <div class="silhouette">
-      <img class="small-photo" src="{{ asset('resources/images/fiesta_icono_acuarela.png') }}" alt="Small photo">
+      <img class="small-photo" src="{{ asset('resources/images/iguanazu_acuarela_sin_fondo.png') }}" alt="Small photo">
     </div>
     <button class="btn location-site"
             location-name="Iguanazú"

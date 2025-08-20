@@ -34,6 +34,8 @@
 
 body {
   overflow-x: hidden;
+  border-left: 9px solid var(--verde_amarillento_apagado) ;
+  border-right: 9px solid var(--verde_amarillento_apagado) ;
 }
 
 .fixed-bg {
@@ -42,7 +44,7 @@ body {
   left: 0;
   width: 100%;
   height: 100lvh;
-  background-image: url("../images/fondo_canson.jpg");
+  background-image: url("../images/fondo_papel_vertical.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -50,6 +52,7 @@ body {
   opacity: 1;
 }
 
+/*
 .fixed-bg-two {
   position: fixed;
   top: 0;
@@ -62,10 +65,11 @@ body {
   background-attachment: fixed;
   z-index: -2;
 }
+*/
 
 section {
   min-height: 100lvh;
-  padding: 80px 20px;
+  padding: 20px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -77,7 +81,6 @@ section {
   background-color: transparent;
   color: white;
   text-align: center;
-  padding: 20px 20px;
 }
 
 .content-section {
@@ -115,7 +118,7 @@ h2 {
 p {
   font-size: 1.1rem;
   margin-bottom: 25px;
-  color: var(--marron_oscuro);
+  color: var(--verde_amarillento_apagado);
   font-family: "IM Fell English SC",serif;
 }
 
@@ -137,11 +140,11 @@ p.margin-top-lg {
 }
 
 .intro-main-names {
+  margin-bottom: 30px;
 
   .main-name {
     font-family: "IM Fell English SC", serif;
     font-size: 4rem;
-    color: var(--verde_oliva);
     margin: 0;
   }
 
@@ -154,13 +157,37 @@ p.margin-top-lg {
 }
 
 .info-date-main {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
   p {
-    margin-bottom: 5px;
-    font-size: 1.4rem;
-    color: var(--verde_oliva);
+    font-size: 2rem;
+  }
+
+  p:first-child {
+    margin-right: 20px;
+  }
+
+  p:nth-child(2) {
+    margin-left: 20px;
+  }
+}
+
+.parents-names {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0 30px 0;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-size: 0.6rem;
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -169,19 +196,26 @@ p.margin-top-lg {
   flex-direction: column;
   align-items: center;
 
-  p {
+  p:first-child {
+    font-family: "IM Fell English SC", serif;
+    font-size: 0.6rem;
+    margin-bottom: 0;
+  }
+
+  p:nth-child(2) {
     max-width: 350px;
     font-size: 0.90rem;
     text-align: center;
     margin-bottom: -10px;
     font-family: "Aniyah", serif;
-    color: var(--verde_oliva);
   }
 
-  p + p {
+  p:nth-child(3) {
     min-width: 300px;
     text-align: right;
     margin-bottom: -30px;
+    font-size: 0.90rem;
+    font-family: "Aniyah", serif;
   }
   img {
     max-width: 80lvw;
@@ -301,6 +335,16 @@ img {
   animation: bounce 2s infinite;
 }
 
+.slide-text > p {
+  display: none;
+}
+
+#slide-1-text.display,
+#slide-2-text.display,
+#slide-3-text.display {
+  display: block;
+}
+
 .slide {
   position: relative;
   margin-top: 26px;
@@ -333,6 +377,9 @@ img {
   width: auto;
   max-width: 100%;
   object-fit: contain;
+
+  /* to leave space for the text*/
+  padding-top: 25px;
 }
 /* Using display:none hides the element, that later it's activated by
   the checked property of the slide control */

@@ -3,32 +3,7 @@ import wedding_bells_mp3 from '../music/wedding_bells.mp3?url'
 import play_svg from '../images/svgs/play_button.svg?raw'
 import pause_svg from '../images/svgs/pause_button.svg?raw'
 
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
-
-// Add animation when sections come into view
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate');
-    }
-  });
-}, {
-  threshold: 0.1
-});
-
-document.querySelectorAll('.content-section').forEach(section => {
-  observer.observe(section);
-});
-
-const firstBg = document.getElementsByClassName("fixed-bg")[0];
+/*const firstBg = document.getElementsByClassName("fixed-bg")[0];
 function checkScroll() {
   const scrollPosition = window.scrollY;
   const viewportHeight = window.innerHeight;
@@ -41,7 +16,7 @@ window.addEventListener('scroll', function() {
   isScrolling = setTimeout(checkScroll, 5);
 }, false);
 
-checkScroll();
+checkScroll();*/
 
 ////********** SAVE TO CALENDAR ACTION BUTTON **********////////////
 document.getElementById('wedding-day-btn').addEventListener('click', addToCalendar);
@@ -154,6 +129,24 @@ function pauseBackgroundMusic() {
 playButton.addEventListener('click', playBackgroundMusic);
 playButton.innerHTML = play_svg;
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+document.querySelectorAll(".slide-open:checked").forEach(slide => {
+  const initialChecked = slide.getAttribute("id");
+  document.getElementById(`${initialChecked}-text`).classList.add("display");
+  console.log(initialChecked)
+})
+document.querySelectorAll(".slide-open").forEach(element => {
+  element.addEventListener("change", (event) => {
+    document.querySelectorAll(".slide-text > p").forEach(element => {
+      element.classList.remove("display");
+    })
+      const target = event.target;
+      const targetId = target.getAttribute("id");
+      document.getElementById(`${targetId}-text`).classList.add("display");
+      console.log(targetId);
+  });
+})
 
 ///////////////////////////////// COUNTDOWN FUNCTIONALITY ///////////////////////////////////////
 function startCountdown(targetDate) {
