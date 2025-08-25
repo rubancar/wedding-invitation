@@ -1,22 +1,8 @@
 import '../css/main.css'
-import wedding_bells_mp3 from '../music/wedding_bells.mp3?url'
+import wedding_music_mp3 from '../music/i_just_want_to_be_your_everything.mp3?url'
+import vestimenta_itinario_pdf from '../files/vestimenta_itinerario.pdf?url'
 import play_svg from '../images/svgs/play_button.svg?raw'
 import pause_svg from '../images/svgs/pause_button.svg?raw'
-
-/*const firstBg = document.getElementsByClassName("fixed-bg")[0];
-function checkScroll() {
-  const scrollPosition = window.scrollY;
-  const viewportHeight = window.innerHeight;
-  firstBg.style.opacity = `${1 - scrollPosition / viewportHeight}`;
-}
-
-let isScrolling;
-window.addEventListener('scroll', function() {
-  window.clearTimeout(isScrolling);
-  isScrolling = setTimeout(checkScroll, 5);
-}, false);
-
-checkScroll();*/
 
 ////********** SAVE TO CALENDAR ACTION BUTTON **********////////////
 document.getElementById('wedding-day-btn').addEventListener('click', addToCalendar);
@@ -76,36 +62,23 @@ document.querySelectorAll('.location-site').forEach(element => {
 function openMaps(event) {
 
   const name = event.target.getAttribute("location-name");
-  const latitude = event.target.getAttribute("location-latitude");
-  const longitude = event.target.getAttribute("location-longitude");
-  const place = {
-    name: name,
-    latitude: latitude,
-    longitude: longitude,
-  };
+ /* const latitude = event.target.getAttribute("location-latitude");
+  const longitude = event.target.getAttribute("location-longitude");*/
 
-  // Check if iOS (iPhone/iPad)
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const googleMapsIglesiaURL = "https://www.google.com/maps/search/?api=1&query=-2.1394773%2C-79.9014029&query_place_id=ChIJ5YYfE21tLZARQWMtdWL9Q9Q"
+  const googleMapsIguanazuURL = "https://www.google.com/maps/search/?api=1&query=-2.1677502%2C-79.9265392&query_place_id=ChIJO2-SYnRyLZARg6Vq7bcRetY"
 
-  // iOS: Open Apple Maps
-  if (isIOS) {
-    const url = `maps://?q=${encodeURIComponent(place.name)}&ll=${place.latitude},${place.longitude}`;
-    window.location.href = url;
-
-    // Fallback to Apple Maps web link if deep link fails
-    setTimeout(() => {
-      window.open(`https://maps.apple.com/?q=${encodeURIComponent(place.name)}&ll=${place.latitude},${place.longitude}`, '_blank');
-    }, 500);
+  let url;
+  if (name.includes("Alborada")) {
+    url = googleMapsIglesiaURL;
+  } else {
+    url = googleMapsIguanazuURL;
   }
-  // Android/Desktop: Open Google Maps
-  else {
-    const url = `https://www.google.com/maps/search/?api=1&query=${place.latitude},${place.longitude}`;
-    window.open(url, '_blank');
-  }
+  window.open(url, '_blank');
+
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-const audio = new Audio(wedding_bells_mp3);
+const audio = new Audio(wedding_music_mp3);
 const playButton = document.getElementById('play-button');
 function playBackgroundMusic() {
   audio.loop = true;
@@ -147,6 +120,12 @@ document.querySelectorAll(".slide-open").forEach(element => {
       console.log(targetId);
   });
 })
+
+////////////////////////// VESTIMENTA BUTTON ////////////////////////////////////////////////////
+
+/*document.getElementById("vestimentaItinerarioPdf").addEventListener('click', () => {
+  window.open(vestimenta_itinario_pdf, '_blank');
+})*/
 
 ///////////////////////////////// COUNTDOWN FUNCTIONALITY ///////////////////////////////////////
 function startCountdown(targetDate) {
@@ -193,4 +172,34 @@ document.addEventListener('DOMContentLoaded', () => {
   // 0 = January
   const targetDate = new Date(2026, 0, 3, 12, 0); // December 31, 2024 at 23:59
   startCountdown(targetDate);
+
+  //////////////////////// ACCORDION EFFECTS //////////////////////////////////////////////////////
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      const item = this.parentNode;
+      const content = this.nextElementSibling;
+
+      // Check if the clicked item is already active
+      const isActive = item.classList.contains('active');
+
+      // Close all accordion items
+      document.querySelectorAll('.accordion-item').forEach(accItem => {
+        accItem.classList.remove('active');
+        accItem.querySelector('.accordion-content').style.maxHeight = '0';
+      });
+
+      // If it wasn't active, open it
+      if (!isActive) {
+        item.classList.add('active');
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Close all accordions by default on page load
+  document.querySelectorAll('.accordion-content').forEach(content => {
+    content.style.maxHeight = '0';
+  });
 });
