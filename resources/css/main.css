@@ -466,82 +466,34 @@ img {
 }
 
 
-/* ACCORDION EFFECTS */
-.accordion {
-  width: 100%;
-  max-width: 600px;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-}
-
-.accordion-header {
-  padding: 20px;
-  cursor: pointer;
-  background-color: #f8f9fa;
+/* DRESS CODE SECTION */
+.vestimenta-section {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background-color 0.3s;
+
+  .silhouette {
+    margin: auto;
+  }
 }
 
-.accordion-header:hover {
-  background-color: #e9ecef;
+.dress-code-main-title {
+  font-size: 2.2rem;
+  margin-bottom: -35px;
 }
 
-.accordion-header h2 {
-  margin: 0;
-  font-size: 20px;
-  color: #333;
-  font-weight: 600;
+.dress-code-main-subtitle {
+  margin-right: -160px;
 }
 
-.accordion-header span {
-  font-size: 20px;
-  transition: transform 0.3s;
+.dress-code-title {
+  margin-top: 30px;
+  margin-bottom: 0;
 }
 
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease-out;
-  background-color: white;
+.dress-code-text {
+  font-family: "IM Fell French Canon Italic", serif;
 }
 
-.accordion-content-inner {
-  padding: 20px;
-  line-height: 1.6;
-  color: #555;
-}
-
-.accordion-item.active .accordion-content {
-  max-height: 300px;
-  transition: max-height 0.5s ease-in;
-}
-
-.accordion-item.active .accordion-header span {
-  transform: rotate(180deg);
-}
-
-.accordion-content p {
-  margin-bottom: 15px;
-}
-
-.accordion-content ul {
-  padding-left: 20px;
-  margin-bottom: 15px;
-}
-
-.accordion-content li {
-  margin-bottom: 8px;
-}
-
-.footer {
-  text-align: center;
-  padding: 20px;
-  color: #6c757d;
-  font-size: 14px;
-  background-color: #f8f9fa;
-  border-top: 1px solid #eaeaea;
+.dress-code-footer {
+  margin-top: 30px;
+  font-family: "IM Fell French Canon Italic", serif;
 }
