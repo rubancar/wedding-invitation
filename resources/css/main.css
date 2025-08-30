@@ -474,6 +474,7 @@ button:active {
 /* DRESS CODE SECTION */
 .vestimenta-section {
   display: flex;
+  margin-top: 50px;
 
   .silhouette {
     margin: auto;
@@ -483,6 +484,7 @@ button:active {
 .dress-code-main-text-section {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .dress-code-main-title {
@@ -510,4 +512,21 @@ button:active {
 ul {
   margin-top: 30px;
   list-style-type: none;
+}
+
+.container-goodbye {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100lvh;
+  text-align: center;
+
+  img {
+    max-width: 85lvw !important;
+    margin: auto;
+  }
+
+  p {
+    margin-bottom: 80px;
+  }
 }
