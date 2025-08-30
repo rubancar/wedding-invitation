@@ -203,3 +203,53 @@ document.addEventListener('DOMContentLoaded', () => {
     content.style.maxHeight = '0';
   });
 });
+
+
+/////////////////////////// CONFIRM INVITATION ////////////////////////////////////////////////////
+function confirmRequest() {
+  const currentUrl = window.location.href;
+  const urlParts = currentUrl.split('/');
+  const idToSend = urlParts[urlParts.length - 1];
+
+  if (!idToSend) {
+    console.error('Error: No ID found in the URL');
+    return;
+  }
+
+  const jsonData = {
+    id: idToSend
+  };
+
+  fetch('/confirm', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(jsonData)
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(data => {
+      if (data === 'ok') {
+        console.log('Request successful: Everything went OK');
+        updateInviteButton();
+      } else {
+        console.error(`Error: Unexpected response: ${data}`);
+      }
+    })
+    .catch(error => {
+      console.error('Error making request:', error);
+    });
+}
+
+function updateInviteButton() {
+  const confirmBtn = document.getElementById('confirm-button')
+  confirmBtn.removeEventListener('click', confirmRequest);
+  confirmBtn.innerHTML = 'has confirmado';
+}
+
+document.getElementById('confirm-button')?.addEventListener('click', confirmRequest);

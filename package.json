@@ -40,6 +40,7 @@
     "@japa/plugin-adonisjs": "^4.0.0",
     "@japa/runner": "^4.2.0",
     "@swc/core": "1.11.24",
+    "@types/luxon": "^3.7.1",
     "@types/node": "^22.15.18",
     "eslint": "^9.26.0",
     "hot-hook": "^0.4.0",
@@ -51,8 +52,11 @@
   },
   "dependencies": {
     "@adonisjs/core": "^6.18.0",
+    "@adonisjs/lucid": "^21.8.0",
     "@adonisjs/vite": "^5.0.0-next.0",
+    "better-sqlite3": "^12.2.0",
     "edge.js": "^6.3.0",
+    "luxon": "^3.7.1",
     "reflect-metadata": "^0.2.2"
   },
   "hotHook": {

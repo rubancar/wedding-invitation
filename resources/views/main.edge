@@ -182,10 +182,16 @@
     <p>el mejor regalo es que estes presente en este día tan especial, pero si deseas hacernos un obsequio aquí tienes nuestros datos bancarios.</p>
 
     <div class="bank-details">
+      <div class="separator">
+        <span></span>
+      </div>
       <p class="no-margin-bottom">cta. ahorros banco pacífico: 1041071867</p>
       <p class="no-margin-bottom">nombre: rubén andrés carvajal ulloa</p>
       <p class="no-margin-bottom">correo: rubencarvajalulloa@gmail.com</p>
       <p>cédula: 0704966977</p>
+      <div class="separator">
+        <span></span>
+      </div>
     </div>
   </div>
 </section>
@@ -198,20 +204,29 @@
     <div class="silhouette">
       <img class="small-photo" src="{{ asset('resources/images/confirmacion_sin_fondo.png') }}" alt="Iglesia miniatura">
     </div>
-    <p class="no-margin-bottom">familia carvajal aguilar</p>
-    <p>admisión, 4 personas</p>
-    <button class="btn">confirmar</button>
-    <p class="margin-top-lg">con el deseo de preservar el carácter íntimo de nuestra celebración, hemos limitado cuidadosamente el número de asistentes. agradecemos produndamente tu comprensión y presencia.</p>
+    @if(invite)
+      <p class="no-margin-bottom">{{ invite.nombre.toLowerCase(); }}</p>
+      <p>admisión, {{ invite.n_invitados }} {{ (invite.n_invitados == 1)?  'invitado' : 'invitados' }}</p>
+
+      @if(invite.confirmado)
+        <button class="btn">has confirmado</button>
+      @else
+        <button class="btn" id="confirm-button">confirmar</button>
+      @end
+      <p class="margin-top-lg">con el deseo de preservar el carácter íntimo de nuestra celebración, hemos limitado cuidadosamente el número de asistentes. agradecemos profundamente tu comprensión y presencia.</p>
+    @else
+      <p class="margin-top-lg">accede al enlace que recibiste inicialmente para que puedas confirmar tu asistencia correctamente.</p>
+    @end
   </div>
 </section>
 
 <section class="content-section">
   <div class="container">
-    <div class="dress-code-text-section">
+    <div class="dress-code-main-text-section">
       <p class="dress-code-main-title">dress code</p>
-      <h1 class="dress-code-main-subtitle">cocktail</h1>
+      <h1 class="dress-code-main-subtitle">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        cocktail</h1>
     </div>
-
     <div class="vestimenta-section">
       <div class="silhouette">
         <img class="small-photo" src="{{ asset('resources/images/chico_sin_fondo.png') }}" alt="Chico photo">
@@ -233,32 +248,37 @@
             <p class="dress-code-text">calzado cómodo para césped</p>
           </div>
         </div>
-
-        <!--<div class="accordion-item">
-          <div class="accordion-header">
-            <h2>consultar itinerario</h2>
-            <span>▼</span>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-content-inner">
-              <ul>
-                <li>coctel de bienvenida</li>
-                <li>comida</li>
-                <li>fotos</li>
-                <li>baile</li>
-                <li>despedida</li>
-              </ul>
-            </div>
-          </div>
-        </div>-->
-
       </div>
       <div class="silhouette">
         <img class="small-photo" src="{{ asset('resources/images/chica_sin_fondo.png') }}" alt="Chica photo">
       </div>
     </div>
-
     <p class="dress-code-footer">Se reservan el color blanco y beige en damas, y azul en traje de caballero.</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <h2>Itinerario</h2>
+    <p>aquí tienes el itinerario del evento, para que puedas estar a tiempo.</p>
+    <div class="silhouette">
+      <img class="small-photo" src="{{ asset('resources/images/vestimenta_sin_fondo.png') }}" alt="Chico photo">
+    </div>
+
+    <ul>
+      <li>
+        <p>12pm | inicio ceremonía eclesiástica.</p>
+      </li>
+      <li>
+        <p>2pm | recepción Iguanazú y coctél de bienvenida.</p>
+      </li>
+      <li>
+        <p>3:30pm | comida y baile.</p>
+      </li>
+      <li>
+        <p>8pm | termina el evento.</p>
+      </li>
+    </ul>
   </div>
 </section>
 </body>
