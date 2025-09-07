@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   @vite(['resources/js/app.js'])
   <title>Andrés & Tamara</title>
+  <link rel="icon" href="{{ asset('resources/images/favicon.jpg') }}" type="image/x-icon">
 </head>
 <body>
 <div class="fixed-bg"></div>
@@ -54,68 +55,15 @@
 <section id="content" class="content-section">
   <div class="container">
 
-    <div class="slide-text">
-      <p id="slide-1-text">siete años de relación nos han hecho entender que... </p>
-      <p id="slide-2-text">amor es solo una palabra hasta que alguien llega para darle sentido...</p>
-      <p id="slide-3-text">y que sin importar el tiempo y las dificulatades, este sentiemiento se va a mantener por siempre.</p>
-    </div>
+    <p class="text-photos">siete años de relación nos han hecho entender que... </p>
+    <img src="{{ asset('resources/images/DSC_6744_02.jpg') }}" alt="photo1">
 
-    <div class="slide">
-      <div class="slide-inner">
+    <p class="text-photos">amor es solo una palabra, hasta que alguien llega para darle sentido...</p>
+    <img src="{{ asset('resources/images/T&A0054.jpg') }}" alt="photo3">
 
-          <input class="slide-open" type="radio" id="slide-1"
-                 name="slide" aria-hidden="true" hidden="" checked="checked">
-          <div class="slide-item">
-            <img src="{{ asset('resources/images/T&A0065.jpg') }}" alt="photo1">
-          </div>
+    <p class="text-photos">y que sin importar el tiempo y las dificulatades, este sentiemiento se va a mantener por siempre.</p>
+    <img src="{{ asset('resources/images/DSC_6153.jpg') }}" alt="photo2">
 
-        <input class="slide-open" type="radio" id="slide-2"
-               name="slide" aria-hidden="true" hidden="">
-        <div class="slide-item">
-          <img src="{{ asset('resources/images/DSC_6154.jpg') }}" alt="photo2">
-        </div>
-
-        <input class="slide-open" type="radio" id="slide-3"
-               name="slide" aria-hidden="true" hidden="">
-        <div class="slide-item">
-          <img src="{{ asset('resources/images/T&A0007.jpg') }}" alt="photo3">
-        </div>
-
-        <label for="slide-3" class="slide-control prev control-1">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-chevron-left" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
-          </svg>
-        </label>
-        <label for="slide-2" class="slide-control next control-1">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-chevron-right" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
-          </svg>
-        </label>
-
-        <label for="slide-1" class="slide-control prev control-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-chevron-left" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
-          </svg>
-        </label>
-        <label for="slide-3" class="slide-control next control-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-chevron-right" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
-          </svg>
-        </label>
-
-        <label for="slide-2" class="slide-control prev control-3">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
-          </svg>
-        </label>
-        <label for="slide-1" class="slide-control next control-3">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
-          </svg>
-        </label>
-
-      </div>
-    </div>
 
     <div class="countdown">
       <div class="separator">
@@ -175,9 +123,9 @@
 
 <section class="content-section">
   <div class="container">
-    <h2>Obsequio</h2>
-    <div class="silhouette">
-      <img class="small-photo" src="{{ asset('resources/images/regalo_sin_fondo.png') }}" alt="Iglesia miniatura">
+    <h2 class="obsequio-title">Obsequio</h2>
+    <div class="silhouette obsequio-image">
+      <img class="icon-photo-section" src="{{ asset('resources/images/regalo_sin_fondo.png') }}" alt="Iglesia miniatura">
     </div>
     <p>el mejor regalo es que estes presente en este día tan especial, pero si deseas hacernos un obsequio aquí tienes nuestros datos bancarios.</p>
 
@@ -202,7 +150,7 @@
     <h2>Confirma tu asistencia</h2>
     <p>es muy importante para nosotros</p>
     <div class="silhouette">
-      <img class="small-photo" src="{{ asset('resources/images/confirmacion_sin_fondo.png') }}" alt="Iglesia miniatura">
+      <img class="icon-photo-section" src="{{ asset('resources/images/confirmacion_sin_fondo.png') }}" alt="Iglesia miniatura">
     </div>
     @if(invite)
       <p class="no-margin-bottom">{{ invite.nombre.toLowerCase(); }}</p>
@@ -227,16 +175,16 @@
       <h1 class="dress-code-main-subtitle">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         cocktail</h1>
     </div>
-    <p>aquí tienes el estilo de vestimenta para el evento, para que brilles y estés cómodo.</p>
+    <p class="p-title-dress-code">aquí tienes el estilo de vestimenta para el evento, para que brilles y estés cómodo.</p>
     <div class="vestimenta-section">
       <div class="silhouette">
         <img class="small-photo" src="{{ asset('resources/images/chico_sin_fondo.png') }}" alt="Chico photo">
       </div>
-      <div>
+      <div class="dress-code-middle-column">
         <div>
           <div class="dress-code-text-section">
             <p class="dress-code-title">colores</p>
-            <p class="dress-code-text">claros, ideal para jardín</p>
+            <p class="dress-code-text">ideal para jardín</p>
           </div>
 
           <div class="dress-code-text-section">
@@ -263,29 +211,30 @@
     <h2>Itinerario</h2>
     <p>aquí tienes el itinerario del evento, para que puedas estar a tiempo.</p>
     <div class="silhouette">
-      <img class="small-photo" src="{{ asset('resources/images/vestimenta_sin_fondo.png') }}" alt="Chico photo">
+      <img class="small-photo" src="{{ asset('resources/images/reloj_arena.png') }}" alt="Chico photo">
     </div>
 
     <ul>
       <li>
-        <p>11:30am | inicio ceremonía eclesiástica</p>
+        <p>11:30 am | inicio ceremonía eclesiástica</p>
       </li>
       <li>
-        <p>2pm | recepción iguanazú y coctél de bienvenida</p>
+        <p>2:00 pm | recepción iguanazú y coctél de bienvenida</p>
       </li>
       <li>
-        <p>3pm | comida</p>
+        <p>3:30 pm | comida</p>
       </li>
       <li>
-        <p>8pm | despedida y fin</p>
+        <p>8:00 pm | despedida y fin</p>
       </li>
     </ul>
   </div>
 </section>
 
 <div class="container-goodbye">
-  <img src="{{ asset('resources/images/DSC_6154.jpg') }}" alt="photo2">
-  <p>te esperamos con mucha ilusión</p>
+  <img src="{{ asset('resources/images/T&A0045.jpg') }}" alt="photo2">
+  <h2>Te esperamos...</h2>
+  <h2>con mucha ilusión</h2>
 </div>
 
 </body>
