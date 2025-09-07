@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   @vite(['resources/js/app.js'])
   <title>Andrés & Tamara</title>
+  <link rel="icon" href="{{ asset('resources/images/favicon.jpg') }}" type="image/x-icon">
 </head>
 <body>
 <div class="fixed-bg"></div>
@@ -57,11 +58,11 @@
     <p class="text-photos">siete años de relación nos han hecho entender que... </p>
     <img src="{{ asset('resources/images/DSC_6744_02.jpg') }}" alt="photo1">
 
-    <p class="text-photos">amor es solo una palabra hasta que alguien llega para darle sentido...</p>
-    <img src="{{ asset('resources/images/T&A0065.jpg') }}" alt="photo3">
+    <p class="text-photos">amor es solo una palabra, hasta que alguien llega para darle sentido...</p>
+    <img src="{{ asset('resources/images/T&A0054.jpg') }}" alt="photo3">
 
     <p class="text-photos">y que sin importar el tiempo y las dificulatades, este sentiemiento se va a mantener por siempre.</p>
-    <img src="{{ asset('resources/images/T&A0021.jpg') }}" alt="photo2">
+    <img src="{{ asset('resources/images/DSC_6153.jpg') }}" alt="photo2">
 
 
     <div class="countdown">
@@ -122,9 +123,9 @@
 
 <section class="content-section">
   <div class="container">
-    <h2>Obsequio</h2>
-    <div class="silhouette">
-      <img class="small-photo" src="{{ asset('resources/images/regalo_sin_fondo.png') }}" alt="Iglesia miniatura">
+    <h2 class="obsequio-title">Obsequio</h2>
+    <div class="silhouette obsequio-image">
+      <img class="icon-photo-section" src="{{ asset('resources/images/regalo_sin_fondo.png') }}" alt="Iglesia miniatura">
     </div>
     <p>el mejor regalo es que estes presente en este día tan especial, pero si deseas hacernos un obsequio aquí tienes nuestros datos bancarios.</p>
 
@@ -149,7 +150,7 @@
     <h2>Confirma tu asistencia</h2>
     <p>es muy importante para nosotros</p>
     <div class="silhouette">
-      <img class="small-photo" src="{{ asset('resources/images/confirmacion_sin_fondo.png') }}" alt="Iglesia miniatura">
+      <img class="icon-photo-section" src="{{ asset('resources/images/confirmacion_sin_fondo.png') }}" alt="Iglesia miniatura">
     </div>
     @if(invite)
       <p class="no-margin-bottom">{{ invite.nombre.toLowerCase(); }}</p>
@@ -174,16 +175,16 @@
       <h1 class="dress-code-main-subtitle">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         cocktail</h1>
     </div>
-    <p>aquí tienes el estilo de vestimenta para el evento, para que brilles y estés cómodo.</p>
+    <p class="p-title-dress-code">aquí tienes el estilo de vestimenta para el evento, para que brilles y estés cómodo.</p>
     <div class="vestimenta-section">
       <div class="silhouette">
         <img class="small-photo" src="{{ asset('resources/images/chico_sin_fondo.png') }}" alt="Chico photo">
       </div>
-      <div>
+      <div class="dress-code-middle-column">
         <div>
           <div class="dress-code-text-section">
             <p class="dress-code-title">colores</p>
-            <p class="dress-code-text">claros, ideal para jardín</p>
+            <p class="dress-code-text">ideal para jardín</p>
           </div>
 
           <div class="dress-code-text-section">
@@ -231,8 +232,9 @@
 </section>
 
 <div class="container-goodbye">
-  <img src="{{ asset('resources/images/T&A0115.jpg') }}" alt="photo2">
-  <p>te esperamos con mucha ilusión</p>
+  <img src="{{ asset('resources/images/T&A0045.jpg') }}" alt="photo2">
+  <h2>Te esperamos...</h2>
+  <h2>con mucha ilusión</h2>
 </div>
 
 </body>

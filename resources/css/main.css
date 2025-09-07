@@ -83,7 +83,7 @@ section {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 2.2rem;
   margin-bottom: 20px;
   opacity: 0;
   transform: translateY(30px);
@@ -93,7 +93,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 1.7rem;
   margin: 20px;
   position: relative;
   display: inline-block;
@@ -171,7 +171,7 @@ p.margin-top-lg {
     justify-content: space-between;
 
     p {
-      font-size: 0.6rem;
+      font-size: 1.2rem;
       margin-bottom: 0;
     }
   }
@@ -184,27 +184,27 @@ p.margin-top-lg {
 
   p:first-child {
     font-family: "IM Fell English SC", serif;
-    font-size: 0.6rem;
+    font-size: 1rem;
     margin-bottom: 0;
   }
 
   p:nth-child(2) {
-    max-width: 350px;
-    font-size: 0.90rem;
+    max-width: 700px;
+    font-size: 1.5rem;
     text-align: center;
     margin-bottom: -10px;
     font-family: "Aniyah", serif;
   }
 
   p:nth-child(3) {
-    min-width: 300px;
+    min-width: 500px;
     text-align: right;
     margin-bottom: -30px;
-    font-size: 0.90rem;
+    font-size: 1.5rem;
     font-family: "Aniyah", serif;
   }
   img {
-    max-width: 80lvw;
+    max-width: 50lvh;
   }
 }
 
@@ -298,13 +298,25 @@ button:active {
   margin-bottom: 5px;
 }
 
+.obsequio-title {
+  margin-bottom: 50px;
+}
+
 .silhouette {
   background-color: transparent;
-  padding: 0px;
+  padding: 0
+}
+
+.obsequio-image {
+  margin-bottom: 30px;
 }
 
 .small-photo {
   max-height: 200px;
+}
+
+.icon-photo-section {
+  max-height: 180px;
 }
 
 .scroll-indicator {
@@ -372,6 +384,47 @@ button:active {
   img {
     max-width: 400px;
   }
+
+  .parents-names {
+    p {
+      font-size: 0.6rem !important;
+      margin-bottom: 0;
+    }
+  }
+
+  .church-main {
+
+    p:first-child {
+      font-size: 0.6rem;
+    }
+
+    p:nth-child(2) {
+      max-width: 350px;
+      font-size: 0.90rem;
+      margin-bottom: -10px;
+    }
+
+    p:nth-child(3) {
+      min-width: 300px;
+      font-size: 0.90rem;
+    }
+
+    img {
+      max-width: 80lvw;
+    }
+  }
+
+  .container-goodbye {
+    img {
+      margin-top: 12lvh;
+      max-width: 80lvw !important;
+      margin-bottom: 40px;
+    }
+  }
+
+  .dress-code-main-title {
+    font-size: 2.2rem !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -393,6 +446,10 @@ button:active {
     max-width: 300px;
   }
 
+  .icon-photo-section {
+    max-height: 120px;
+  }
+
 }
 
 
@@ -409,26 +466,36 @@ button:active {
 .dress-code-main-text-section {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .dress-code-main-title {
-  font-size: 2.2rem;
+  font-size: 4rem;
   margin-bottom: -35px;
 }
 
+.p-title-dress-code {
+  margin-bottom: 60px;
+}
+
+.dress-code-middle-column {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .dress-code-title {
-  margin-top: 30px;
+  margin-top: 35px;
   margin-bottom: 0;
 }
 
 .dress-code-text {
   font-family: "IM Fell French Canon Italic", serif;
   font-size: 0.9rem;
+  margin-bottom: 35px;
 }
 
 .dress-code-footer {
-  margin-top: 30px;
+  margin-top: 60px;
   font-family: "IM Fell French Canon Italic", serif;
   font-size: 0.9rem;
 }
@@ -441,18 +508,19 @@ ul {
 }
 
 .container-goodbye {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   min-height: 100lvh;
   text-align: center;
-
   img {
-    max-width: 85lvw !important;
-    margin: auto;
+    margin-top: 12lvh;
+    max-width: 500px;
+    margin-bottom: 20px;
+  }
+  h2 {
+    display: block;
+    margin: 0;
   }
 
-  p {
-    margin-bottom: 80px;
+  h2:nth-child(3) {
+    margin-top: -14px;
   }
 }
