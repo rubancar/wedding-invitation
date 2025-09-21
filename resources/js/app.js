@@ -3,6 +3,9 @@ import wedding_music_mp3 from '../music/i_just_want_to_be_your_everything.mp3?ur
 import vestimenta_itinario_pdf from '../files/vestimenta_itinerario.pdf?url'
 import play_svg from '../images/svgs/play_button.svg?raw'
 import pause_svg from '../images/svgs/pause_button.svg?raw'
+// because if this: https://docs.adonisjs.com/guides/basics/vite#processing-additional-assets-with-vite
+// import.meta.glob(['../images/**'])
+// import.meta.glob(['../music/**'])
 
 ////********** SAVE TO CALENDAR ACTION BUTTON **********////////////
 document.getElementById('wedding-day-btn').addEventListener('click', addToCalendar);

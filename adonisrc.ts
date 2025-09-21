@@ -45,7 +45,8 @@ export default defineConfig({
     },
     () => import('@adonisjs/vite/vite_provider'),
     () => import('@adonisjs/core/providers/edge_provider'),
-    () => import('@adonisjs/lucid/database_provider')
+    () => import('@adonisjs/lucid/database_provider'),
+    () => import('@adonisjs/static/static_provider'),
   ],
 
   /*
@@ -82,18 +83,18 @@ export default defineConfig({
     ],
     forceExit: false,
   },
-  metaFiles: [{
-    pattern: 'public/**',
-    reloadServer: false,
-  },
-  {
-    pattern: 'resources/views/**/*.edge',
-    reloadServer: false,
-  }
+  metaFiles: [
+    {
+      pattern: 'public/**',
+      reloadServer: false,
+    },
+    {
+      pattern: 'resources/views/**/*.edge',
+      reloadServer: false,
+    },
   ],
   hooks: {
-    onBuildStarting: [() => import('@adonisjs/vite/build_hook')]
+    onBuildStarting: [() => import('@adonisjs/vite/build_hook')],
   },
-  assetsBundler: false
+  assetsBundler: false,
 })
-

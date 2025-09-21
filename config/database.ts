@@ -7,7 +7,7 @@ const dbConfig = defineConfig({
     sqlite: {
       client: 'better-sqlite3',
       connection: {
-        filename: app.makePath('wedding.sqlite')
+        filename: app.inProduction ? '/persistent/data/wedding.sqlite' : app.makePath('wedding.sqlite')
       },
       useNullAsDefault: true,
       migrations: {
