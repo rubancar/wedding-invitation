@@ -10,29 +10,26 @@ import.meta.glob(['../music/**'])
 ////********** SAVE TO CALENDAR ACTION BUTTON **********////////////
 document.getElementById('wedding-day-btn').addEventListener('click', addToCalendar);
 
-function addToCalendar() {
+function addToCalendar(event) {
   const eventDetails = {
-    title: "Boda Andrés y Tamara",
+    title: "Matrimonio de Andrés y Tamara",
     description: "Ceremonia religiosa: Iglesia Nuestra Señora de la Alborada; Recepción: Iguanazú",
     location: "Alborada / Iguanazú",
     startTime: "2026-01-03T12:00:00",
     endTime: "2026-01-03T20:00:00",
   };
+  const selectedOs = event.target.getAttribute("selected-os");
 
   // For iOS (Web Share API)
-  if (navigator.share) {
-    navigator.share({
-      title: eventDetails.title,
-      text: `${eventDetails.description}\nLocation: ${eventDetails.location}`,
-      url: generateGoogleCalendarLink(eventDetails), // Fallback URL
-    }).catch(err => {
-      console.error("Error sharing:", err);
-      openFallbackCalendarLink(eventDetails);
-    });
-  }
-  // For Android & Desktop (Google Calendar Link)
-  else {
-    openFallbackCalendarLink(eventDetails);
+  if (selectedOs === "ios") {
+    downloadICSFile(eventDetails)
+  } else if (selectedOs === "android") {
+    window.open(generateGoogleCalendarLink(eventDetails), '_blank')
+  } else if (selectedOs === "desktop") {
+    // generate a Google Calendar link for desktop
+    window.open(generateGoogleCalendarLink(eventDetails), '_blank')
+  } else {
+    downloadICSFile(eventDetails)
   }
 }
 
@@ -50,9 +47,52 @@ function generateGoogleCalendarLink(event) {
   );
 }
 
-// Opens the calendar link in a new tab
-function openFallbackCalendarLink(event) {
-  window.open(generateGoogleCalendarLink(event), '_blank');
+function downloadICSFile(eventDetails) {
+  // Format dates to iCalendar format (YYYYMMDDTHHMMSSZ)
+  const formatDate = (dateString) => {
+    return new Date(dateString).toISOString().replace(/-|:|\.\d+/g, '');
+  };
+
+  const start = formatDate(eventDetails.startTime);
+  const end = formatDate(eventDetails.endTime);
+  const now = formatDate(new Date().toISOString());
+
+  // Create the .ics file content
+  const icsContent = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Wedding Calendar//ES',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    'BEGIN:VEVENT',
+    `DTSTART:${start}`,
+    `DTEND:${end}`,
+    `DTSTAMP:${now}`,
+    `SUMMARY:${eventDetails.title}`,
+    `DESCRIPTION:${eventDetails.description.replace(/\n/g, '\\n')}`,
+    `LOCATION:${eventDetails.location}`,
+    `STATUS:CONFIRMED`,
+    `SEQUENCE:0`,
+    `UID:${now}@wedding-invitation`,
+    'END:VEVENT',
+    'END:VCALENDAR'
+  ].join('\r\n');
+
+  // Create a Blob with the .ics content
+  const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+
+  // Create a download link
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'matrimonio-andres-tamara.ics';
+
+  // Trigger the download
+  document.body.appendChild(link);
+  link.click();
+
+  // Clean up
+  document.body.removeChild(link);
+  URL.revokeObjectURL(link.href);
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 

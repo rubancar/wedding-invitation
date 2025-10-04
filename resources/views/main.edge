@@ -31,7 +31,7 @@
     </div>
 
     <div class="church-main">
-      <p>tenemos el honor de invitarte a la nuestra boda eclesiástica</p>
+      <p>tenemos el honor de invitarte a nuestra boda eclesiástica</p>
       <p>Santuario Nuestra Señora de la</p><p>Alborada</p>
       <img class="church-main-img"
            src="{{ asset('resources/images/altar_sin_fondo.png') }}"
@@ -54,15 +54,14 @@
 
 <section id="content" class="content-section">
   <div class="container">
+    <p class="text-photos">después de 7 años de caminar juntos comprendimos que el amor se mide en los pequeños gestos, en la paciencia compartida y en la certeza de elegirnos una y otra vez.</p>
+    <img src="{{ asset('resources/images/T&A0006.jpg') }}" alt="photo1">
 
-    <p class="text-photos">después de 7 años de caminar juntos, comprendimos que el amor no se mide en días, ni en promesas perfectas, sino en los pequeños gestos, en la paciencia compartida y en la certeza de elegirnos una y otra vez. </p>
-    <img src="{{ asset('resources/images/DSC_6744_02.jpg') }}" alt="photo1">
+    <p class="text-photos">estamos, y seguimos contruyendo un nosotros que no tiene final.</p>
+    <img src="{{ asset('resources/images/T&A0048.jpg') }}" alt="photo3">
 
-    <p class="text-photos">amor fue solo una palabra hasta que nuestras vidas se encontraron y le dimos sentido.</p>
-    <img src="{{ asset('resources/images/T&A0054.jpg') }}" alt="photo3">
-
-    <p class="text-photos">nos amamos sin prisa, con raíces firmes contruyendo un nosotros que no tiene final. y hoy, celebramos ese amor que creció lento, firme y eterno.</p>
-    <img src="{{ asset('resources/images/DSC_6153.jpg') }}" alt="photo2">
+    <p class="text-photos">y hoy, celebramos ese amor que creció lento, firme y eterno.</p>
+    <img src="{{ asset('resources/images/T&A0018.jpg') }}" alt="photo2">
 
 
     <div class="countdown">
@@ -88,7 +87,7 @@
       </div>
     </div>
 
-    <button class="btn" id="wedding-day-btn">agenda la fecha</button>
+    <button class="btn" id="wedding-day-btn" selected-os="{{ selected_os }}">agenda la fecha</button>
 
   </div>
 </section>
@@ -130,16 +129,15 @@
     <p>el mejor regalo es que estes presente en este día tan especial, pero si deseas hacernos un obsequio aquí tienes nuestros datos bancarios.</p>
 
     <div class="bank-details">
-      <div class="separator">
-        <span></span>
+      <div class="main-message">
+        <div class="main-names">
+          <p class="main-name">andrés</p><p class="main-and">and</p><p class="main-name">tamara</p>
+        </div>
+        <p>agradecen su gentileza</p>
       </div>
       <p class="no-margin-bottom">cta. ahorros banco pacífico: 1041071867</p>
-      <p class="no-margin-bottom">nombre: rubén andrés carvajal ulloa</p>
-      <p class="no-margin-bottom">correo: rubencarvajalulloa@gmail.com</p>
-      <p>cédula: 0704966977</p>
-      <div class="separator">
-        <span></span>
-      </div>
+      <p class="no-margin-bottom">rubén andrés carvajal ulloa</p>
+      <p>ci: 0704966977</p>
     </div>
   </div>
 </section>
@@ -184,7 +182,7 @@
         <div>
           <div class="dress-code-text-section">
             <p class="dress-code-title">colores</p>
-            <p class="dress-code-text">ideal para jardín</p>
+            <p class="dress-code-text">ideales para jardín</p>
           </div>
 
           <div class="dress-code-text-section">
@@ -206,6 +204,7 @@
   </div>
 </section>
 
+<!--
 <section class="content-section">
   <div class="container">
     <h2>Itinerario</h2>
@@ -230,9 +229,10 @@
     </ul>
   </div>
 </section>
+-->
 
 <div class="container-goodbye">
-  <img src="{{ asset('resources/images/T&A0045.jpg') }}" alt="photo2">
+  <img src="{{ asset('resources/images/T&A0058.jpg') }}" alt="photo2">
   <h2>Te esperamos...</h2>
   <h2>con mucha ilusión</h2>
 </div>
